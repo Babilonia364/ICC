@@ -40,20 +40,19 @@ void resto () // Calcular o multiplo
 
 void paridade () // Calcular a paridade
 {
-	int num1, resto;
+	int num1;
 	float expo;
 	printf("Digite o numero que deseja saber se e impar ou par\n");
 	scanf("%d", &num1);
-	resto = num1 % 2;
 	
-	if (resto == 0)
+	if (!(num1%2))
 	{
-		expo = pow(num1, 1/2); //Função da biblioteca math.h para calcular raiz e quadrado
+		expo = sqrt(num1); //Função da biblioteca math.h para calcular raiz
 		printf("A raiz e: %.2f\n", expo);
 	}
 	else
 	{
-		expo = pow(num1, 2); // Mesma coisa CARLOS ABOBIM!!!
+		expo = pow(num1, 2); // Elevar ao quadrado, poderia ser feito com num1*num1
 		printf("O quadrado do numero e: %.2f\n", expo);
 	}
 }
@@ -122,6 +121,9 @@ int calculadora2(int j) //Função secundária da calculadora
 			num1 = num1/num2;
 			printf("A divisao e: \n", num1);
 		break;
+		
+		default:
+		printf("Vamo parar de curiosidade vamo?");
 	}
 }
 
@@ -165,15 +167,9 @@ void triangulo() // Triângulos Duh
 	int A, B, C;
 	printf("Digite os valores dos 3 lados do triangulo numeros inteiros apenas.\n");
 	scanf("%d %d %d", &A, &B, &C);
-	if (A < B + C) //If aninhado
+	if ((A<B+C)&&(B<C+A)&&(C<A+B)) //If aninhado
 	{
-		if (B < C + A)
-		{
-			if (C < A + B)
-			{
-				printf("O triangulo existe");
-			}
-		}
+		printf("O triangulo existe");
 	}
 	else
 		printf("Nao e triangulo");
@@ -195,35 +191,33 @@ void triangulo() // Triângulos Duh
 
 int main ()
 {
-	int operador;
-	printf("Resto 1\nParidade 2\nMedia 3\n Calculadora 4\n Triangulo 5\n");
+	int operador = 0;
+	printf("Resto 1\nParidade 2\nMedia 3\nCalculadora 4\nTriangulo 5\n");
 	scanf("%d", &operador);
 	
-	switch (operador)
-	{
-		case 0:
-			printf("Perdi a partida\n");
-		break;
-		
-		case 1:
+		switch (operador)
+		{
+			case 1:
 			resto();
-		break;
+			break;
 		
-		case 2:
+			case 2:
 			paridade();
-		break;
+			break;
 		
-		case 3:
+			case 3:
 			media();
-		break;
+			break;
 		
-		case 4:
+			case 4:
 			calculadora1();
-		break;
+			break;
 		
-		case 5:
+			case 5:
 			triangulo();
-		break;
-	}
+			break;		
+			default:
+			printf("Pau que nasce torto...");
+		}
 	return 0;
 }
