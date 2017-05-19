@@ -3,11 +3,10 @@
 
 void resto () // Calcular o multiplo
 {
-	int num1, resto, i = 0;
+	int num1, i = 0;
 	printf("Digite um numero inteiro que deseja saber se e multiplo de 2, 3 ou 6\n");
 	scanf("%d", &num1);
-	resto = num1%2; // Resto recebe o resto da divisão do número digitado por 2
-	if (resto == 0) //Se o resto for igual a zero
+	if (!(num1%2)) //Se o resto for igual a zero
 	{
 		i++; //Incrementando o valor de i em 1, ou seja, i = i + 1
 		printf("Multiplo de 2\n");
@@ -17,8 +16,7 @@ void resto () // Calcular o multiplo
 		printf("Nao e multiplo de 2\n");
 	}
 	
-	resto = num1%3;
-	if (resto == 0)
+	if (!(num1%3))
 	{
 		i++; //Análogo ao comentário anterior
 		printf("Multiplo de 3\n");
@@ -135,7 +133,7 @@ void calculadora1() //Função Primária da calculadora
 	{
 		switch (i)
 		{
-			case 0:
+			default:
 				printf("SÓ ENTRE ZERO E 1 CARALHUDO");
 			break;
 			
@@ -191,10 +189,11 @@ void triangulo() // Triângulos Duh
 
 int main ()
 {
-	int operador = 0;
-	printf("Resto 1\nParidade 2\nMedia 3\nCalculadora 4\nTriangulo 5\n");
+	int operador = 0, i = 1;
+	printf("Resto 1\nParidade 2\nMedia 3\nCalculadora 4\nTriangulo 5\nSair 6\n");
 	scanf("%d", &operador);
-	
+	while(i)
+	{
 		switch (operador)
 		{
 			case 1:
@@ -215,9 +214,15 @@ int main ()
 		
 			case 5:
 			triangulo();
-			break;		
+			break;
+			
+			case 6:
+			i = 0;
+			break;
+			
 			default:
 			printf("Pau que nasce torto...");
 		}
+	}
 	return 0;
 }
