@@ -89,72 +89,40 @@ void media() // Calcular a media
 					}
 }
 
-int calculadora2(int j) //Função secundária da calculadora
-{
-	int num1, num2;
-	printf("Digite 2 valores\n");
-	scanf("%d %d", &num1, &num2);
-	switch (j)
-	{
-		case 0:
-			printf("NAO TEM PORRA\n");
-		break;
-		
-		case 1: //Soma
-			num1 = num1 + num2;
-			printf("A soma e: \n", num1);
-		break;
-		
-		case 2: //Subtração
-			num1 = num1 - num2;
-			printf("A diferenca e: \n", num1);
-		break;
-		
-		case 3: //Multiplicação
-			num1 = num1*num2;
-			printf("A multiplicacao e: \n", num1);
-		break;
-		
-		case 4: //Divisão
-			num1 = num1/num2;
-			printf("A divisao e: \n", num1);
-		break;
-		
-		default:
-		printf("Vamo parar de curiosidade vamo?");
-	}
-}
-
 void calculadora1() //Função Primária da calculadora
 {
-	int i, j;
+	int j, num1, num2;
 	printf("Escolha uma das seguintes funções\nSoma digite 1\nSubtraçao digite 2\nMultiplicacao digite 3\nDivisao divide 4\n");
-	scanf("%d", &i);
+	scanf("%d", &j);
 	{
-		switch (i)
+		switch (j)
 		{
 			default:
-				printf("SÓ ENTRE ZERO E 1 CARALHUDO");
+				printf("SÓ ENTRE ZERO E 1 CARALHUDO\n");
 			break;
 			
 			case 1: //Soma
-				j=1;
-				calculadora2(j);
+			printf("Digite 2 valores\n");
+			scanf("%d %d", &num1, &num2);
+			printf("Soma %d + %d = %d\n", num1, num2, num1+num2);
 			break;
 			
 			case 2: //Subtração
-				j=2;
-				calculadora2(j);
+			printf("Digite 2 valores\n");
+			scanf("%d %d", &num1, &num2);
+			printf("Subtração %d - %d = %d\n", num1, num2, num1-num2);
 			break;
 			
 			case 3: //Multiplicação
-				j=3;
-				calculadora2(j);
+			printf("Digite 2 valores\n");
+			scanf("%d %d", &num1, &num2);
+			printf("Multiplicacao %d x %d = %d\n", num1, num2, num1*num2);
 			break;
 			
 			case 4: //Divisão
-				j=4;
-				calculadora2(j);
+			printf("Digite 2 valores\n");
+			scanf("%d %d", &num1, &num2);
+			printf("Divisao %d / %d = %d\n", num1, num2, num1/num2);
 			break;
 		}
 	}
