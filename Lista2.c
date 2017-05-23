@@ -135,33 +135,33 @@ void triangulo() // Triângulos Duh
 	scanf("%d %d %d", &A, &B, &C);
 	if ((A<B+C)&&(B<C+A)&&(C<A+B)) //If aninhado
 	{
-		printf("O triangulo existe");
+		printf("O triangulo existe\n");
 	}
 	else
-		printf("Nao e triangulo");
+		printf("Nao e triangulo\n");
 	
 	if (A == B == C)
 	{
-		printf("Triangulo equilatero");
+		printf("Triangulo equilatero\n");
 	}
 	//Não é necessário ter else
 	if (A == B || B == C || A == C) //Operador ou ||
 	{
-		printf("Triangulo isoceles");
+		printf("Triangulo isoceles\n");
 	}
 	if (A != B != C)
 	{
-		printf("Triangulo escaleno");
+		printf("Triangulo escaleno\n");
 	}
 }
 
 int main ()
 {
 	int operador = 0, i = 1;
-	printf("Resto 1\nParidade 2\nMedia 3\nCalculadora 4\nTriangulo 5\nSair 6\n");
-	scanf("%d", &operador);
-	while(i)
+		while(i)
 	{
+		printf("\nResto 1\nParidade 2\nMedia 3\nCalculadora 4\nTriangulo 5\nSair 6\n\n");
+		scanf("%d", &operador);
 		switch (operador)
 		{
 			case 1:
